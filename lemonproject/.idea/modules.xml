@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/SerialiserDRF.iml" filepath="$PROJECT_DIR$/.idea/SerialiserDRF.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/lemonproject.iml" filepath="$PROJECT_DIR$/.idea/lemonproject.iml" />
     </modules>
   </component>
 </project>
