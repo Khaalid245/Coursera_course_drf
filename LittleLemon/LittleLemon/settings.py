@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'LittleLemonDRF',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -131,4 +132,10 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 2,
+
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',  # ✅ For filterset_fields
+        'rest_framework.filters.OrderingFilter',  # ✅ For ordering_fields
+        'rest_framework.filters.SearchFilter',  # ✅ For search_fields
+    ]
 }
