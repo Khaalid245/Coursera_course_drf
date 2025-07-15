@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<h2 class="text-xl font-bold mb-4">Sign Up</h2>
+
+<!-- ✅ Message display -->
+{% if messages %}
+  <ul>
+    {% for message in messages %}
+      <li class="{% if message.tags == 'success' %}text-green-600{% else %}text-red-600{% endif %}">
+        {{ message }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+<!-- ✅ Signup Form -->
+<form method="POST" class="space-y-4">
+  {% csrf_token %}
+
+  <div>
+    <label>Email:</label>
+    <input type="email" name="email" required class="border p-2 w-full">
+  </div>
+
+  <div>
+    <label>Username:</label>
+    <input type="text" name="username" required class="border p-2 w-full">
+  </div>
+
+  <div>
+    <label>Password:</label>
+    <input type="password" name="password" required class="border p-2 w-full">
+    <small class="text-gray-500">
+      Password must be at least 8 characters long and include uppercase, lowercase, number, and special character (e.g. @, $, !).
+    </small>
+  </div>
+
+  <button type="submit" class="bg-blue-500 text-white px-4 py-2">Sign Up</button>
+</form>
+{% endblock %}

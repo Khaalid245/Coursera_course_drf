@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+  <div class="bg-white shadow-md rounded-lg p-8 w-full max-w-md">
+    <h2 class="text-2xl font-bold mb-4">Welcome, {{ user.username }} 👋</h2>
+
+    <p class="mb-4 text-gray-600">You're successfully logged in.</p>
+
+    <!-- JWT Token Display (Optional) -->
+
+    <a href="{% url 'logout' %}" class="inline-block mt-4 bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded">
+      Log Out
+    </a>
+  </div>
+</div>
+{% endblock %}
